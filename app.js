@@ -11,8 +11,6 @@ const FACING_MODE_ENVIRONMENT = "environment";
 const videoConstraints = {
       facingMode: FACING_MODE_USER
     };
-    
-
 
 var constraints = { video: { facingMode: FACING_MODE_USER }, audio: false };
 
@@ -41,9 +39,14 @@ window.addEventListener("load", cameraStart, false);
 
 flipBtn.addEventListener('click', function(){
     // we need to flip, stop everything
-    videoElm.pause()
-    videoElm.srcObject = null
+    cameraView.pause()
+    cameraView.srcObject = null
     // toggle \ flip
-    shouldFaceUser = !shouldFaceUser;
-    capture();
+    setFacingMode(
+        prevState =>
+          prevState === FACING_MODE_USER
+            ? FACING_MODE_ENVIRONMENT
+            : FACING_MODE_USER
+      );
+    cameraStart
   })
