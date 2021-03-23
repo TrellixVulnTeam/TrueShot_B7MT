@@ -37,3 +37,10 @@ html, body{
       right: 20px;
       z-index: 2;
   }
+
+input[type="button"]{
+    outline:none;
+ }
+ input[type="button"]::-moz-focus-inner {
+    border: 0;
+ }
