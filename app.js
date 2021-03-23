@@ -47,4 +47,5 @@ flipBtn.addEventListener('click', function(){
     cameraStart();
   })
 
-cameraStart();
+// Start the video stream when the window loads
+window.addEventListener("load", cameraStart, false);
