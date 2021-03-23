@@ -43,3 +43,17 @@ html, body{
       right: 20px;
       z-index: 2;
   }
+
+  #flipbtn {
+    width: 200px;
+    background-color: #4202fe;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    position: fixed;
+    top: 30px;
+    left: calc(50% - 100px);
+}
