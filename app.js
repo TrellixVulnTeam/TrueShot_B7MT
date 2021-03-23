@@ -3,12 +3,16 @@ const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
     cameraTrigger = document.querySelector("#camera--trigger"),
-    cameraSwitch = document.querySelector("#camera--switch"),
-    flipBtn = document.querySelector('#flip-btn');
+    cameraSwitch = document.querySelector("#camera--switch")
 
+// Access the device camera and stream to cameraView
+let supports = navigator.mediaDevices.getSupportedConstraints();
+if( supports['facingMode'] === true ) {
+  flipBtn.disabled = false;
+}
 // Set constraints for the video stream
 
-var constraints = { video: { facingMode: 'user' }, audio: false };
+var constraints = { video: { facingMode: "user" }, audio: false };
 
 function cameraStart() {
     navigator.mediaDevices
@@ -30,17 +34,14 @@ cameraTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
 };
-
-/*
-//flip camera button
-flipBtn.addEventListener('click', function(){
-    // we need to flip, stop everything
-    cameraView.pause()
-    cameraView.srcObject = null
-    // toggle \ flip
-    shouldFaceUser = !shouldFaceUser;
-    cameraStart();
-  })
-*/
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
+
+flipBtn.addEventListener('click', function(){
+    // we need to flip, stop everything
+    videoElm.pause()
+    videoElm.srcObject = null
+    // toggle \ flip
+    shouldFaceUser = !shouldFaceUser;
+    capture();
+  })
