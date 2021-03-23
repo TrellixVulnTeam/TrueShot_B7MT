@@ -5,14 +5,16 @@ const cameraView = document.querySelector("#camera--view"),
     cameraTrigger = document.querySelector("#camera--trigger"),
     cameraSwitch = document.querySelector("#camera--switch")
 
-// Access the device camera and stream to cameraView
-let supports = navigator.mediaDevices.getSupportedConstraints();
-if( supports['facingMode'] === true ) {
-  flipBtn.disabled = false;
-}
-// Set constraints for the video stream
+const FACING_MODE_USER = "user";
+const FACING_MODE_ENVIRONMENT = "environment";
+    
+const videoConstraints = {
+      facingMode: FACING_MODE_USER
+    };
+    
 
-var constraints = { video: { facingMode: "user" }, audio: false };
+
+var constraints = { video: { facingMode: FACING_MODE_USER }, audio: false };
 
 function cameraStart() {
     navigator.mediaDevices
