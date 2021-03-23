@@ -27,6 +27,12 @@ html, body{
       bottom: 30px;
       left: calc(50% - 100px);
   }
+
+  .camera--trigger:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
   .taken{
       height: 100px!important;
       width: 100px!important;
@@ -37,10 +43,3 @@ html, body{
       right: 20px;
       z-index: 2;
   }
-
-input[type="button"]{
-    outline:none;
- }
- input[type="button"]::-moz-focus-inner {
-    border: 0;
- }
