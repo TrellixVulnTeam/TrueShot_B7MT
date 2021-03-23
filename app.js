@@ -6,12 +6,6 @@ const cameraView = document.querySelector("#camera--view"),
     cameraSwitch = document.querySelector("#camera--switch"),
     flipBtn = document.querySelector('#flip-btn');
 
-
-let supports = navigator.mediaDevices.getSupportedConstraints();
-if( supports['facingMode'] === true ) {
-  flipBtn.disabled = false;
-}
-
 // Set constraints for the video stream
 
 var constraints = { video: { facingMode: shouldFaceUser ? 'user' : 'environment' }, audio: false };
@@ -37,6 +31,7 @@ cameraTrigger.onclick = function() {
     cameraOutput.classList.add("taken");
 };
 
+/*
 //flip camera button
 flipBtn.addEventListener('click', function(){
     // we need to flip, stop everything
@@ -46,6 +41,6 @@ flipBtn.addEventListener('click', function(){
     shouldFaceUser = !shouldFaceUser;
     cameraStart();
   })
-
+*/
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
