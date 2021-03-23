@@ -44,7 +44,7 @@ html, body{
       z-index: 2;
   }
 
-  #flipbtn {
+  .flipbtn {
     width: 200px;
     background-color: #4202fe;
     color: white;
