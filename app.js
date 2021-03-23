@@ -8,7 +8,7 @@ const cameraView = document.querySelector("#camera--view"),
 
 // Set constraints for the video stream
 
-var constraints = { video: { facingMode: shouldFaceUser ? 'user' : 'environment' }, audio: false };
+var constraints = { video: { facingMode: 'user' }, audio: false };
 
 function cameraStart() {
     navigator.mediaDevices
