@@ -37,14 +37,3 @@ html, body{
     right: 20px;
     z-index: 2;
 }
-
-.header {
-    width: 100%;
-    background-color: #4202fe;
-    height: 110px;
-}
-
-.logo {
-    padding-top: 10px;
-    padding-left: 100px;
-}
