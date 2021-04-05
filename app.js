@@ -12,7 +12,7 @@ const videoConstraints = {
       facingMode: FACING_MODE_USER
     };
 
-var constraints = { video: { facingMode: FACING_MODE_USER }, audio: false };
+var constraints = { video: { facingMode: FACING_MODE_ENVIRONMENT }, audio: false };
 
 function cameraStart() {
     navigator.mediaDevices
