@@ -51,3 +51,24 @@ flipBtn.addEventListener('click', function(){
       );
     cameraStart
   })
+
+const pinataApiKey = "0f7cd878ead735301c5f";
+const pinataSecretApiKey = "bfcc99ca1723f873ba32dad72c2f36cd384248704a4e11305c260b7dff6a6389";
+const axios = require("axios");
+const fs = require("fs");
+const FormData = require("form-data");
+const pinFileToIPFS = async () => {
+  const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;=
+  let data = new FormData();
+  data.append("file", fs.createReadStream("image/webp"));
+  const res = await axios.post(url, data, {
+    maxContentLength: "Infinity", 
+    headers: {
+      "Content-Type": `multipart/form-data; boundary=${data._boundary}`,
+      pinata_api_key: pinataApiKey, 
+      pinata_secret_api_key: pinataSecretApiKey,
+    },
+  });
+  console.log(res.data);
+};
+pinFileToIPFS();
