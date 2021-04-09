@@ -34,6 +34,7 @@ cameraTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
     $('audio')[0].play();
+    pinFileToIPFS();
 };
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
@@ -71,4 +72,3 @@ const pinFileToIPFS = async () => {
   });
   console.log(res.data);
 };
-pinFileToIPFS();
