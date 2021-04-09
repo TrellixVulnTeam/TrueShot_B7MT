@@ -38,7 +38,7 @@ cameraTrigger.onclick = function() {
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
 
-flipBtn.addEventListener('click', function(){
+/* flipBtn.addEventListener('click', function(){
     // we need to flip, stop everything
     cameraView.pause()
     cameraView.srcObject = null
@@ -51,7 +51,7 @@ flipBtn.addEventListener('click', function(){
       );
     cameraStart
   })
-
+*/
 const pinataApiKey = "0f7cd878ead735301c5f";
 const pinataSecretApiKey = "bfcc99ca1723f873ba32dad72c2f36cd384248704a4e11305c260b7dff6a6389";
 const axios = require("axios");
