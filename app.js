@@ -58,7 +58,7 @@ const axios = require("axios");
 const fs = require("fs");
 const FormData = require("form-data");
 const pinFileToIPFS = async () => {
-  const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;=
+  const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
   let data = new FormData();
   data.append("file", fs.createReadStream("image/webp"));
   const res = await axios.post(url, data, {
