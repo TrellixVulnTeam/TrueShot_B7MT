@@ -55,7 +55,7 @@ window.addEventListener("load", cameraStart, false);
 */
 const pinataApiKey = "0f7cd878ead735301c5f";
 const pinataSecretApiKey = "bfcc99ca1723f873ba32dad72c2f36cd384248704a4e11305c260b7dff6a6389";
-const axios = require("axios");
+//const axios = require("axios");
 const fs = require("fs");
 const FormData = require("form-data");
 const pinFileToIPFS = async () => {
